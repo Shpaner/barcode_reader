@@ -1,5 +1,5 @@
 import 'package:bar_code_reader/model/stepper_data.dart';
-import 'package:bar_code_reader/screens/instructions_screen.dart';
+import 'package:bar_code_reader/steps/step_screen1.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -48,7 +48,7 @@ class ResultScreen extends StatelessWidget {
               onPressed: () {
                 Provider.of<StepperData>(context, listen: false)
                     .setResult(result);
-                Navigator.pushNamed(context, InstructionsScreen.id);
+                Navigator.pushNamed(context, StepScreen1.id);
               },
               child: Text(
                 'Continue',

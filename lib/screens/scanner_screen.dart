@@ -19,36 +19,39 @@ class ScannerScreen extends StatelessWidget {
           color: Colors.green,
         ),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text(
-            "Scan the bottle of your choice and I'll show you how to recycle it!",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 22.0,
+      body: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              "Scan the bottle of your choice and I'll show you how to recycle it!",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 22.0,
+              ),
             ),
-          ),
-          Flex(
-            direction: Axis.vertical,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              RoundedButton(
-                icon: FontAwesomeIcons.barcode,
-                text: 'Scan Barcode',
-                color: Colors.green,
-                onPressed: () => scanCode(ScanMode.BARCODE, context),
-              ),
-              RoundedButton(
-                icon: Icons.qr_code_sharp,
-                text: 'Scan QR Code',
-                color: Colors.blue,
-                onPressed: () => scanCode(ScanMode.QR, context),
-              ),
-            ],
-          ),
-        ],
+            Flex(
+              direction: Axis.vertical,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                RoundedButton(
+                  icon: FontAwesomeIcons.barcode,
+                  text: 'Scan Barcode',
+                  color: Colors.green,
+                  onPressed: () => scanCode(ScanMode.BARCODE, context),
+                ),
+                RoundedButton(
+                  icon: Icons.qr_code_sharp,
+                  text: 'Scan QR Code',
+                  color: Colors.blue,
+                  onPressed: () => scanCode(ScanMode.QR, context),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
