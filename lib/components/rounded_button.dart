@@ -1,3 +1,4 @@
+import 'package:bar_code_reader/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -29,9 +30,7 @@ class RoundedButton extends StatelessWidget {
               ),
               Text(
                 text,
-                style: TextStyle(
-                  color: Colors.white,
-                ),
+                style: kRoundedButtonTextStyle,
               ),
             ],
           ),

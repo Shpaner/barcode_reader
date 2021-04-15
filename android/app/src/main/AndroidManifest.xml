@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.witalis.bar_code_reader">
    <application
-        android:label="RecyclerApp"
+        android:label="ScannerDemo"
         android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"

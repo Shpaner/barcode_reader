@@ -1,3 +1,4 @@
+import 'package:bar_code_reader/constants.dart';
 import 'package:bar_code_reader/screens/scanner_screen.dart';
 import 'package:bar_code_reader/steps/final_step_screen.dart';
 import 'package:bar_code_reader/steps/step_screen2.dart';
@@ -86,10 +87,7 @@ class StepScreenBody extends StatelessWidget {
               ),
               Text(
                 title,
-                style: TextStyle(
-                  fontSize: 40.0,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: kStepTitleTextStyle,
               ),
               SizedBox(
                 height: 35.0,
@@ -97,9 +95,7 @@ class StepScreenBody extends StatelessWidget {
               Text(
                 currentScreenIndex == 4 ? content + '\n' + result : content,
                 textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 22.0,
-                ),
+                style: kStepContentTextStyle,
               ),
             ],
           ),

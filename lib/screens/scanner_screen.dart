@@ -1,3 +1,4 @@
+import 'package:bar_code_reader/assets/get_bold_icon_short.dart';
 import 'package:bar_code_reader/components/rounded_button.dart';
 import 'package:bar_code_reader/screens/result_screen.dart';
 import 'package:flutter/cupertino.dart';
@@ -5,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import '../constants.dart';
 
 class ScannerScreen extends StatelessWidget {
   static const String id = 'scanner_screen';
@@ -13,10 +15,14 @@ class ScannerScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Welcome to RecycHelper!'),
+        title: Text(
+          'Welcome to ScannerDemo!',
+          style: kAppBarTextStyle,
+        ),
         leading: Icon(
-          FontAwesomeIcons.recycle,
-          color: Colors.green,
+          GetBoldIcons.getbold_logo_short,
+          color: getBoldYellow,
+          size: 25.0,
         ),
       ),
       body: Padding(
@@ -28,9 +34,7 @@ class ScannerScreen extends StatelessWidget {
             Text(
               "Scan the bottle of your choice and I'll show you how to recycle it!",
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 22.0,
-              ),
+              style: kStepContentTextStyle,
             ),
             Flex(
               direction: Axis.vertical,
@@ -39,13 +43,13 @@ class ScannerScreen extends StatelessWidget {
                 RoundedButton(
                   icon: FontAwesomeIcons.barcode,
                   text: 'Scan Barcode',
-                  color: Colors.green,
+                  color: getBoldOrange,
                   onPressed: () => scanCode(ScanMode.BARCODE, context),
                 ),
                 RoundedButton(
                   icon: Icons.qr_code_sharp,
                   text: 'Scan QR Code',
-                  color: Colors.blue,
+                  color: getBoldBlue,
                   onPressed: () => scanCode(ScanMode.QR, context),
                 ),
               ],
